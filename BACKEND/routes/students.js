@@ -34,6 +34,7 @@ router.route("/").get((req, res)=>{
     })
 })
 
+
 // User data Updation
 router.route("/update/:id").put(async (req, res) =>{
     let userId = req.params.id
@@ -54,11 +55,14 @@ router.route("/update/:id").put(async (req, res) =>{
         res.status(500).send({status : "Error with updating data", error: err.message})
     })
  
-//User data Deletion
-router.route('/delete/:id').delete((req, res) =>{
+})
+
+//User data delete
+
+router.route('/delete/:id').delete(async (req, res) =>{
     let userId = req.params.id;
     
-    Student.findByIdAndRemove(userId).then(()=>{
+    const delteteStudent = await Student.findByIdAndDelete(userId).then(()=>{
         res.status(200).send({status:"User Delted"});
     }).catch((err)=>{
         console.log(err)
@@ -67,7 +71,7 @@ router.route('/delete/:id').delete((req, res) =>{
     
 })
     
- })
+
 
 // Get a user data from the database
 

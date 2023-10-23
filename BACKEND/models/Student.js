@@ -1,5 +1,4 @@
 // this file is used to create the model for the student 
-
 const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
