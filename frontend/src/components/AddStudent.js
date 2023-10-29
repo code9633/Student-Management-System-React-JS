@@ -3,9 +3,9 @@ import axios from "axios"
 
 function AddStudent(){
 
-    let [name, setName] = useState("")
-    let [age, setAge] = useState("")
-    let [gender, setGender] = useState("")
+    const [name, setName] = useState("")
+    const [age, setAge] = useState("")
+    const [gender, setGender] = useState("")
 
     function sendData(e){
         // when clicking submit button , preventing the redirect the page

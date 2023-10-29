@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom";
 
 function Header(){
 
@@ -12,10 +13,13 @@ function Header(){
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Home </a>
+                        {/* <a className="nav-link" href="/">Home </a> */}
+                        {/* to prevent the reload the page us Link */}
+                        <Link to= "/" className="nav-link">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/add">Create Student</a>
+                        {/* <a className="nav-link" href="/add">Create Student</a> */}
+                        <Link to = "/add" className="nav-link">Create Student</Link>
                     </li>
                     </ul>
                 </div>
